@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE students SYSTEM "student.dtd">
+
+<!--<!DOCTYPE students [
+		<!ELEMENT students (student*) >
+		ElEMENT是元素 <students> -> 包含多个 <student>
+		<!ELEMENT student (name,age,sex)>
+		Element 元素 -> <student> -> 包含 <name>,<age>,<sex>
+		<!ELEMENT name (#PCDATA)>
+		element 元素 -> <name> ->包含 #PCDATA 限制元素里面的内容是字符类型的
+		<!ELEMENT age (#PCDATA)>
+		<!ELEMENT sex (#PCDATA)>
+		<!ATTLIST student number ID #REQUIRED>
+		ATTLIST:声明一个属性 <student>标签里面有一个number属性 且是ID 而且 #REQUIRED 是必须的;且唯一的
+		]>-->
+<students>
+
+    <student number="s001">
+        <name>zhangsan</name>
+        <age>abc</age>
+        <sex>hehe</sex>
+    </student>
+
+    <student number="s002">
+        <name>lisi</name>
+        <age>24</age>
+        <sex>female</sex>
+    </student>
+</students>

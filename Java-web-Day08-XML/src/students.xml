@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"  standalone="no"?>
+
+<students>
+    <student number="sixstar_0001">
+        <name id="sixstar">
+            <firstname>Terrence</firstname>
+            <lastname>YAN</lastname>
+        </name>
+        <age>18</age>
+        <gender>female</gender>
+    </student>
+
+    <student number="sixstar_0002">
+        <name>Jack</name>
+        <age>18</age>
+        <gender>female</gender>
+    </student>
+</students>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- declaration file:
+    version necessary
+    encoding necessary utf-8; default value = iso-8859-1
+    standalone unnecessary; isolated or not; value is Yes or No
+-->
+
+<!--
+    import css file
+    <?xml-stylesheet type="text/css" href="a.css" ?>
+-->
+<!--
+    标签可以包含
+        字母，数字以及其他的字符
+    标签
+        不能包含空格，以数字开头或者标点符号开头
+-->
+<Users>
+    <user id="1">
+        <name>Terry</name>
+        <age>23</age>
+        <gender>male</gender>
+        <br/>
+    </user>
+    <user id="2">
+        <name>Terrance</name>
+        <age>23</age>
+        <gender>female</gender>
+        <code>
+            <!-- it will auto convert symbol -->
+            if(a &lt; b &amp;&amp; a &gt; c){}
+            <!-- it will be a string -->
+            <![CDATA[
+                if(a < b && a > c){}
+            ]]>
+        </code>
+        <br/>
+    </user>
+</Users>

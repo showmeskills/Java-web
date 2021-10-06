@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	1.填写xml文档的根元素
+	2.引入xsi前缀.  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	3.引入xsd文件命名空间.  xsi:schemaLocation="http://www.sixstar.com/xml  student.xsd"
+	4.为每一个xsd约束声明一个前缀,作为标识  xmlns="http://www.sixstar.com/xml"
+
+
+ -->
+<a:students   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:a="http://www.sixstar.com/xml"
+              xsi:schemaLocation="http://www.sixstar.com/xml  student.xsd"
+>
+    <a:student number="sixstar_0001">
+        <a:name>tom</a:name>
+        <a:age>18</a:age>
+        <a:sex>male</a:sex>
+    </a:student>
+    <a:student number="sixstar_0002">
+        <a:name>Terry</a:name>
+        <a:age>25</a:age>
+        <a:sex>male</a:sex>
+    </a:student>
+</a:students>

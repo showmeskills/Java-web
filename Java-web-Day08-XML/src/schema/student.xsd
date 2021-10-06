@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--自定义约束-->
+<xsd:schema xmlns="http://www.sixstar.com/xml"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.sixstar.com/xml" elementFormDefault="qualified">
+    <!--  声明元素 name="students" <students/>  -->
+    <xsd:element name="students" type="studentsType"/>
+    <!--
+        定义一个复合类型,
+        它决定了一组元素的属性和相关类型
+    -->
+    <xsd:complexType name="studentsType">
+        <!--   xsd:sequence 给一组元素定义特定的序列     -->
+        <xsd:sequence>
+            <!--
+                <student/>
+                minOccurs="0" 最小值
+                maxOccurs="unbounded" 最大值
+             -->
+            <xsd:element name="student" type="studentType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+        <!--  对<student/> 里面的标签约束   -->
+    <xsd:complexType name="studentType">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="age" type="ageType" />
+            <xsd:element name="sex" type="sexType" />
+        </xsd:sequence>
+        <!--
+            xsd:attribute  申明一个属性
+        -->
+        <xsd:attribute name="number" type="numberType" use="required"/>
+    </xsd:complexType>
+    <!--  <sex/> 标签限制内容 male or female -->
+    <xsd:simpleType name="sexType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="male"/>
+            <xsd:enumeration value="female"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!--  <age/> 标签限制内容 0 - 256  -->
+    <xsd:simpleType name="ageType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="256"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!--  <a:student number="sixstar_0001"> 限制number值 is string 前缀是sixstar_\d{4} 限制4位数   -->
+    <xsd:simpleType name="numberType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="sixstar_\d{4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
