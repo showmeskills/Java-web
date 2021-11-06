@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            (()=>{
+                $.ajax({
+                    url:"ajaxServlet",
+                    type:"get",
+                    data:{
+                        "username":"tom",
+                        "age":"18"
+                    },
+                    dataType:"text",//类型是text 才有正常返回值
+                    success(response){
+                        console.log(response)
+                    },
+                    error(msg){
+                        alert("出错了。。。。")
+                    }
+                })
+                $.post("ajaxServlet",{username:"anan"},function (data) {
+                    alert(data)
+                },"text");
+
+                $.post("ajaxServlet",{username:"anan"},function (data) {
+                    alert(data)
+                },"text");
+            })();
+        })
+    </script>
+</body>
+</html>

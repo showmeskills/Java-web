@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let person = {
+            name:"terry",
+            age:18,
+            skills:"js"
+        }
+        let obj = {
+            person:[
+                {
+                    name:"terry",
+                    age:18,
+                    skills:"js"
+                },
+                {
+                    name:"terry",
+                    age:18,
+                    skills:"js"
+                },{
+                    name:"terry",
+                    age:18,
+                    skills:"js"
+                }
+            ]
+        }
+        let name = person["name"];
+        let name1 = person.name;
+        // console.log(name);
+        // console.log(name1);
+        for(let info in person){
+            console.log(info)//key 值
+            console.log(person[info])//value 值
+        }
+    </script>
+</body>
+</html>

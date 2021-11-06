@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <input type="button" id="btn" value="send msg to servlet"/>
+    <input type="text" id="ipt"/>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn").on("click",function(){
+                $.ajax({
+                    url:"findUserServlet",
+                    type:"get",
+                    data:{
+                        username:$("#ipt").val()
+                    },
+                    dataType:"json",
+                    success(response) {
+                        console.log(response)
+                    },
+                    error(msg){
+                        console.log(msg)
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>
