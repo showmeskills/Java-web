@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <select id="province">
+        <option>--请选择省份--</option>
+    </select>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.get(
+                "/provinceSerlvet",
+                {},
+                function(data){
+                    let province = $("#province");
+                    $(data).each(function(){
+                        console.log(this.city)
+                        let options = `<option name=${this.id}>${this.city}</option>`;
+                        province.append(options)
+                    })
+                }
+            )
+        })
+    </script>
+</body>
+</html>
