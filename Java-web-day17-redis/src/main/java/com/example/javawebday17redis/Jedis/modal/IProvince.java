@@ -5,5 +5,5 @@ import com.example.javawebday17redis.Jedis.Domain.Province;
 import java.util.List;
 
 public interface IProvince {
-    public List<Province> findAll();
+    public List<Province> findAll(); 
 }
